@@ -1,0 +1,20 @@
+{
+  "name": "web-backend-ii",
+  "version": "1.0.0",
+  "description": "MongoDB, Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niiquash/Web-Backend-II.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niiquash/Web-Backend-II/issues"
+  },
+  "homepage": "https://github.com/niiquash/Web-Backend-II#readme"
+}
