@@ -1,0 +1,23 @@
+[
+    {
+        "firstName": "Ammon",
+        "lastName": "Quarshie",
+        "email": "aquarsh66@gmail.com",
+        "favoriteColor": "Green",
+        "birthday": "1995-06-06"
+    },
+    {
+        "firstName": "Paola",
+        "lastName": "Qosja",
+        "email": "polaqosja@gmail.com",
+        "favoriteColor": "Blue",
+        "birthday": "1996-11-02"
+    },
+    {
+        "firstName": "Xhuljo",
+        "lastName": "Kashari",
+        "email": "xkashari@gmail.com",
+        "favoriteColor": "Pink",
+        "birthday": "1996-07-06"
+    }
+]
