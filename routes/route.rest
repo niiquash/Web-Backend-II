@@ -5,3 +5,25 @@ GET http://localhost:3000/contacts
 GET http://localhost:3000/contacts/632fe38af76e7982af435ea2
 
 ###
+
+POST http://localhost:3000/contacts/
+content-type: application/json
+
+{
+	"firstName": "Anita",
+	"lastName": "Quarshie",
+	"email": "abaquash@gmail.com",
+	"favoriteColor": "yellow",
+	"birthday": "1970-08-27"
+}
+###
+
+PUT http://localhost:3000/contacts/63363baa20e4f52d4903d00e
+content-type: application/json
+
+{
+	"favoriteColor": "brown"
+}
+###
+
+DELETE http://localhost:3000/contacts/63363c94bc7c711f0744ec0
