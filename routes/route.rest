@@ -2,7 +2,7 @@ GET http://localhost:3000/contacts
 
 ###
 
-GET http://localhost:3000/contacts/632fe38af76e7982af435ea2
+GET http://localhost:3000/contacts/6336562857002fc5767eec79
 
 ###
 
@@ -10,20 +10,20 @@ POST http://localhost:3000/contacts/
 content-type: application/json
 
 {
-	"firstName": "Anita",
-	"lastName": "Quarshie",
-	"email": "abaquash@gmail.com",
+	"firstName": "Paola",
+	"lastName": "Qosja",
+	"email": "pola@gmail.com",
 	"favoriteColor": "yellow",
 	"birthday": "1970-08-27"
 }
 ###
 
-PUT http://localhost:3000/contacts/63363baa20e4f52d4903d00e
+PUT http://localhost:3000/contacts/6336533457002fc5767eec6b
 content-type: application/json
 
 {
-	"favoriteColor": "brown"
+	"email": "xyz@yahoo.com"
 }
 ###
 
-DELETE http://localhost:3000/contacts/63363c94bc7c711f0744ec0
+DELETE http://localhost:3000/contacts/6336533257002fc5767eec67
