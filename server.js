@@ -11,14 +11,21 @@ const db = mongoose.connection
 db.on('error', (error) => console.error(`Could not connect to the database. Error: ${error}`))
 db.once('open', () => console.log('Connected to Database'))
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.use(express.json());
-app.use(cors({
-    origin: '*'
-}))
+// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+// app.use(express.json());
+// app.use(cors({
+//     origin: '*'
+// }))
 
-const contactsRouter = require('./routes/contacts')
-app.use('/contacts', contactsRouter)
+app
+    .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+    .use(express.json())
+    .use((req, res, next) => {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        next();
+    })
+    .use('/', require('./routes/index'))
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Example app listening on port ${port}`));
