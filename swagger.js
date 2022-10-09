@@ -5,8 +5,8 @@ const doc = {
         title: 'My API',
         description: 'An API that returns a list of contact objects',
     },
-    host: 'localhost:3000',
-    schemes: ['http'],
+    host: 'https://ammonquarshiecontactsapi-j7hq.onrender.com',
+    schemes: ['http', 'https'],
 };
 
 const outputFile = './swagger-output.json';
