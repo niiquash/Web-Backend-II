@@ -5,7 +5,7 @@ const doc = {
         title: 'My API',
         description: 'An API that returns a list of contact objects',
     },
-    host: 'ammonquarshiecontactsapi-j7hq.onrender.com',
+    host: 'ammonquarshiecontactsapi.onrender.com',
     schemes: ['http', 'https'],
 };
 

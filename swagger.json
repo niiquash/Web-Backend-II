@@ -5,7 +5,7 @@
     "description": "An API that returns a list of contact objects",
     "version": "1.0.0"
   },
-  "host": "ammonquarshiecontactsapi-j7hq.onrender.com",
+  "host": "ammonquarshiecontactsapi.onrender.com",
   "basePath": "/",
   "schemes": [
     "http",
