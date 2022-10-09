@@ -1,9 +1,8 @@
+// Localhost routes
 GET http://localhost:3000/contacts
-
 ###
 
 GET http://localhost:3000/contacts/6336562857002fc5767eec79
-
 ###
 
 POST http://localhost:3000/contacts/
@@ -27,3 +26,34 @@ content-type: application/json
 ###
 
 DELETE http://localhost:3000/contacts/6336533257002fc5767eec67
+###
+
+// Render routes
+GET https://ammonquarshiecontactsapi.onrender.com/contacts
+###
+
+GET https://ammonquarshiecontactsapi.onrender.com/contacts/632fe38af76e7982af435ea3
+###
+
+POST https://ammonquarshiecontactsapi.onrender.com/contacts
+content-type: application/json
+
+{
+	"firstName": "Captain",
+	"lastName": "Planet",
+	"email": "loveheart@gmail.com",
+	"favoriteColor": "white",
+	"birthday": "30 A.D."
+}
+###
+
+PUT https://ammonquarshiecontactsapi.onrender.com/contacts/634267c6f2e1418e20c98f8b
+content-type: application/json
+
+{
+	"email": "xyz@yahoo.com"
+}
+###
+
+DELETE https://ammonquarshiecontactsapi.onrender.com/contacts/634267c6f2e1418e20c98f8b
+###
