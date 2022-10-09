@@ -11,20 +11,20 @@ const db = mongoose.connection
 db.on('error', (error) => console.error(`Could not connect to the database. Error: ${error}`))
 db.once('open', () => console.log('Connected to Database'))
 
-// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-// app.use(express.json());
-// app.use(cors({
-//     origin: '*'
-// }))
-
 app
     .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
     .use(express.json())
+    .use(express.urlencoded({ extended: true }))
     .use((req, res, next) => {
         res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader(
+            'Access-Control-Allow-Headers',
+            'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
+        );
+        res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         next();
     })
-    .use(cors({ origin: '*' }))
     .use('/', require('./routes/index'))
 
 
