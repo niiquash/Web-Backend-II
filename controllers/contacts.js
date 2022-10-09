@@ -1,30 +1,26 @@
-const mongoose = require('mongoose');
 const Contacts = require('../models/contacts');
 
-const getAll = async (req, res) => {
+const getAllContacts = async (req, res) => {
     try {
         const contacts = await Contacts.find();
-        console.log(`The database was found: ${contacts}`)
-        return res.json(contacts);
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(contacts);
     } catch (error) {
-        console.log('There was an error finding this collection');
-        res.status(500).json({ message: error })
+        res.status(500).json({ message: error.message });
     }
 };
 
-const getOne = async (req, res, next) => {
-    let contact
+const getOneContact = async (req, res) => {
     try {
-        contact = await Contacts.findById(req.params.id)
+        const contact = await Contacts.findById(req.params.id);
         if (contact == null) {
-            return res.status(404).json({ message: 'Cannot find contact' })
+            return res.status(404).json({ message: "Cannot find contact by specified ID" })
         }
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(contact)
     } catch (error) {
-        return res.status(500).json({ message: error.message })
+        res.status(500).json({ message: error.message });
     }
-
-    res.contact = contact
-    next()
 };
 
 const createContact = async (req, res) => {
@@ -46,20 +42,26 @@ const createContact = async (req, res) => {
 
 const updateContact = async (req, res) => {
     if (!req.body) {
-        return res.status(400).send({ message: "Data to update cannot be empty!" });
+        return res.status(400).send({
+            message: "Data to update cannot be empty!"
+        });
     }
-    try {
-        const updateContact = await Contacts.findByIdAndUpdate(
-            { _id: req.params.id },
-            req.body,
-            { useFindAndModify: false }
-        )
-        return res.status(200).send('Item has been successfully updated')
-    } catch (error) {
-        res.status(500).send({
-            message: "Error updating Contact with given id."
-        })
-    }
+
+    const id = req.params.id;
+    Contacts.findByIdAndUpdate(
+        id, req.body, { useFindAndModify: false }
+    ).then((data) => {
+        if (!data) {
+            res.status(404).send({
+                message: `Cannot update contact with id=${id}.`
+            });
+        } else res.send({ message: 'Contact was updated sucdessfully.' })
+    })
+        .catch((error) => {
+            res.status(500).send({
+                message: 'Error updating contact with id=' + id
+            });
+        });
 };
 
 const deleteContact = async (req, res) => {
@@ -68,14 +70,14 @@ const deleteContact = async (req, res) => {
         return res.status(200).send(`Item with specified Id has been removed successfully`)
     } catch (error) {
         res.status(500).send({
-            message: "Could not delte contact with given id"
+            message: "Could not delete contact with given id"
         })
     }
 };
 
 module.exports = {
-    getAll,
-    getOne,
+    getAllContacts,
+    getOneContact,
     createContact,
     updateContact,
     deleteContact

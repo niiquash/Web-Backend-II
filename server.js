@@ -24,8 +24,9 @@ app
         res.setHeader('Access-Control-Allow-Origin', '*');
         next();
     })
+    .use(cors({ origin: '*' }))
     .use('/', require('./routes/index'))
 
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Example app listening on port ${port}`));
+app.listen(port, () => console.log(`Contacts API listening on port ${port}`));
