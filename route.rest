@@ -32,22 +32,22 @@ DELETE http://localhost:3000/contacts/6336533257002fc5767eec67
 GET https://ammonquarshiecontactsapi.onrender.com/contacts
 ###
 
-GET https://ammonquarshiecontactsapi.onrender.com/contacts/632fe38af76e7982af435ea3
+GET https://ammonquarshiecontactsapi.onrender.com/contacts/63426e4b8b220438f1694cd8
 ###
 
 POST https://ammonquarshiecontactsapi.onrender.com/contacts
 content-type: application/json
 
 {
-	"firstName": "Captain",
-	"lastName": "Planet",
-	"email": "loveheart@gmail.com",
-	"favoriteColor": "white",
+	"firstName": "Princess",
+	"lastName": "Fiona",
+	"email": "shrek@gmail.com",
+	"favoriteColor": "green",
 	"birthday": "30 A.D."
 }
 ###
 
-PUT https://ammonquarshiecontactsapi.onrender.com/contacts/634267c6f2e1418e20c98f8b
+PUT https://ammonquarshiecontactsapi.onrender.com/contacts/63426e4b8b220438f1694cd8
 content-type: application/json
 
 {
@@ -55,5 +55,5 @@ content-type: application/json
 }
 ###
 
-DELETE https://ammonquarshiecontactsapi.onrender.com/contacts/634267c6f2e1418e20c98f8b
+DELETE https://ammonquarshiecontactsapi.onrender.com/contacts/63426e4b8b220438f1694cd8
 ###
